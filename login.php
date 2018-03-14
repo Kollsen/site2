@@ -6,7 +6,7 @@ session_start();
 <?php include("includes/header.php"); ?>
 
 <?php
-$connection = @mysqli_connect('localhost', root, '', namelist) or die("Нет соединения с БД");
+$connection = @mysqli_connect('localhost', root, '', usertbl) or die("Нет соединения с БД");
 if(isset($_SESSION["session_username"])){
 // echo "Session is set"; // for testing purposes
 header("Location: intropage.php");
@@ -15,7 +15,7 @@ if(isset($_POST["login"])){
 if(!empty($_POST['username']) && !empty($_POST['password'])) {
     $username=$_POST['username'];
     $password=$_POST['password'];
-    $query = mysqli_query($connection, "SELECT * FROM namelist WHERE username='".$username."' AND password='".$password."'");
+    $query = mysqli_query($connection, "SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
     $numrows=mysqli_num_rows($query);
     if($numrows!=0)
     {

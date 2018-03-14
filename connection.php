@@ -3,7 +3,7 @@
 
 
 $host = 'localhost';
-$database = 'namelist';
+$database = 'usertbl';
 $user = 'root';
 $password = '';
 	?>
